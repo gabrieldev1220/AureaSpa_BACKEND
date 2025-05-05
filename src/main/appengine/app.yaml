@@ -1,15 +1,12 @@
-runtime: java23
-env: flex
+runtime: java21
+instance_class: F1
 handlers:
   - url: /.*
-    script: this field is required, but ignored
+    script: auto
 automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 1
-resources:
-  cpu: 1
-  memory_gb: 1.0
-  disk_size_gb: 10
+  target_cpu_utilization: 0.65
+  min_instances: 1
+  max_instances: 1
 env_variables:
   SPRING_DATASOURCE_URL: "jdbc:mysql://sql10.freesqldatabase.com:3306/sql10776253?useSSL=false&serverTimezone=UTC"
   SPRING_DATASOURCE_USERNAME: "sql10776253"
