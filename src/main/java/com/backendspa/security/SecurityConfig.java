@@ -49,6 +49,8 @@ public class SecurityConfig {
                 .cors(cors -> cors.configurationSource(corsConfigurationSource())) // Habilitar CORS explícitamente
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
+                        // Permitir solicitudes OPTIONS sin autenticación
+                        .requestMatchers(org.springframework.http.HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**", "/api/auth/register").permitAll()
                         .requestMatchers("/api/admin/**").hasRole("GERENTE_GENERAL") // Solo GERENTE_GENERAL
                         .requestMatchers("/api/clientes/**").authenticated()
