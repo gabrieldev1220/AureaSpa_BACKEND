@@ -1,17 +1,18 @@
-# fly.toml app configuration file generated for backendspa on 2025-05-07T20:51:45-03:00
+# fly.toml app configuration file generated for backendspa-new on 2025-05-07T22:08:32-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backendspa'
+app = 'backendspa-new'
 primary_region = 'eze'
 
 [build]
   builder = 'docker'
+
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = true
+  auto_stop_machines = 'stop'
   auto_start_machines = true
   min_machines_running = 0
   processes = ['app']
