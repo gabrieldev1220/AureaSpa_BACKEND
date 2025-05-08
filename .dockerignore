@@ -1,35 +1,40 @@
-# flyctl launch added from .gitignore
-**\HELP.md
-**\target
-!**\.mvn\wrapper\maven-wrapper.jar
-!**\**\src\main\**\target
-!**\**\src\test\**\target
+# Excluir archivos de compilación de Maven
+target/
+*.jar
+*.war
 
-### STS ###
-**\.apt_generated
-**\.classpath
-**\.factorypath
-**\.project
-**\.settings
-**\.springBeans
-**\.sts4-cache
+# Excluir configuraciones locales y sensibles
+application.properties
+application.yml
+application*.properties
+application*.yml
 
-### IntelliJ IDEA ###
-**\.idea
-**\*.iws
-**\*.iml
-**\*.ipr
+# Excluir archivos de IntelliJ IDEA
+.idea/
+*.iml
 
-### NetBeans ###
-nbproject\private
-nbbuild
-dist
-nbdist
-.nb-gradle
-**\build
-!**\**\src\main\**\build
-!**\**\src\test\**\build
+# Excluir archivos de otros IDEs y herramientas
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+nbproject/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+.vscode/
 
-### VS Code ###
-**\.vscode
+# Excluir control de versiones
+.git/
+.gitignore
+
+# Excluir documentación y otros archivos innecesarios
+*.md
+*.txt
+
+# Excluir archivos de configuración de Fly.io
 fly.toml
+.dockerignore
