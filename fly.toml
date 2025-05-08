@@ -1,13 +1,17 @@
-# fly.toml app configuration file generated for backendspa-new on 2025-05-07T22:08:32-03:00
+# fly.toml app configuration file generated for backendspa on 2025-05-07T22:17:15-03:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'backendspa-new'
+app = 'backendspa'
 primary_region = 'eze'
 
 [build]
-  builder = 'docker'
+  builder = "paketobuildpacks/builder-jammy-base"
+  buildpacks = ["paketo-buildpacks/java"]
+
+[env]
+  BP_JVM_VERSION = "21"
 
 [http_service]
   internal_port = 8080
