@@ -33,9 +33,7 @@ public class SpaUserDetailsService implements UserDetailsService {
         // Buscar en empleados
         Optional<Empleado> empleado = empleadoService.getEmpleadoByEmail(email);
         if (empleado.isPresent()) {
-            // Obtener el rol del empleado desde getAuthorities()
-            String role = empleado.get().getAuthorities().iterator().next().getAuthority().replace("ROLE_", "");
-            return new SpaUserDetails(empleado.get(), role);
+            return new SpaUserDetails(empleado.get(), "EMPLEADO");
         }
 
         throw new UsernameNotFoundException("Usuario no encontrado: " + email);
